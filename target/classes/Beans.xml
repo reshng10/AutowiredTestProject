@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+<!--    autowire -byName: burda xml baxirki eger inject olunan bean in adi ile property ni set eden setter metodu setPropertyName adi eynidi ya yox(burda constructor ehemiyetsizdi, cunki constructor insuz da set edir), eynidise inject edir-->
+<!--   autowire byType: burda eger inject olunanin tipi verilen bean lerden biri ile eynidise inject edir, ve setter metodu setAnyting adinda  birshey olmalidi            -->
+<!--    autowire constructor: bu constructor-arg in equal versiyasidi-->
+    <bean id = "textEditor" class = "com.tutorialspoint.TextEditor"  >
+<!--        bu o demeydiki constuctorda mutleq SpellChecker spellcecker argumenti olmalidi,ve asakidaki constructor-arg spellChecker ref ini argumente inject eliyir-->
+<!--      <constructor-arg ref="spellChecker"/>-->
+<!--        bu o demeydiki setSpellChecker  metodu mutleq olmalidi ve asagidakin komeyi ile hemen metod used olur -->
+<!--        <property name = "spellChecker" ref = "spellChecker"/>-->
+
+
+    </bean>
+
+    <!-- Definition for spellChecker bean -->
+
+    <bean id = "aaa" class = "com.tutorialspoint.SpellChecker">
+
+    </bean>
+
+</beans>
